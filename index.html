@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadmonks Juice Shop Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="container" id="login-container">
+        <div class="login-form">
+            <h1>Sadmonks Juice Shop</h1>
+            <h2>Management System</h2>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="showAdminDashboard()">Login as Admin</button>
+                <button class="btn btn-secondary" onclick="showOrderTakerDashboard()">Login as Order Taker</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Taker Dashboard -->
+    <div class="container hidden" id="ordertaker-container">
+        <header class="dashboard-header">
+            <h1>Order Taker Dashboard</h1>
+            <div class="user-info">
+                <span class="username">Order Taker</span>
+                <button class="btn btn-small" onclick="showLoginPage()">Logout</button>
+            </div>
+        </header>
+        
+        <div class="dashboard-content">
+            <div class="section-title">
+                <h2>Tables</h2>
+            </div>
+            
+            <div class="table-locations">
+                <div class="location-section">
+                    <h3>Garden</h3>
+                    <div class="table-grid">
+                        <button class="table-btn" onclick="openJuiceMenu(1)">Table 1</button>
+                        <button class="table-btn" onclick="openJuiceMenu(2)">Table 2</button>
+                        <button class="table-btn" onclick="openJuiceMenu(3)">Table 3</button>
+                        <button class="table-btn" onclick="openJuiceMenu(4)">Table 4</button>
+                        <button class="table-btn" onclick="openJuiceMenu(5)">Table 5</button>
+                        <button class="table-btn occupied" onclick="openJuiceMenu(6)">Table 6</button>
+                        <button class="table-btn" onclick="openJuiceMenu(7)">Table 7</button>
+                        <button class="table-btn" onclick="openJuiceMenu(8)">Table 8</button>
+                        <button class="table-btn occupied" onclick="openJuiceMenu(9)">Table 9</button>
+                        <button class="table-btn" onclick="openJuiceMenu(10)">Table 10</button>
+                    </div>
+                </div>
+                
+                <div class="location-section">
+                    <h3>AC Room</h3>
+                    <div class="table-grid">
+                        <button class="table-btn" onclick="openJuiceMenu(11)">Table 11</button>
+                        <button class="table-btn occupied" onclick="openJuiceMenu(12)">Table 12</button>
+                        <button class="table-btn" onclick="openJuiceMenu(13)">Table 13</button>
+                        <button class="table-btn" onclick="openJuiceMenu(14)">Table 14</button>
+                        <button class="table-btn" onclick="openJuiceMenu(15)">Table 15</button>
+                        <button class="table-btn" onclick="openJuiceMenu(16)">Table 16</button>
+                        <button class="table-btn" onclick="openJuiceMenu(17)">Table 17</button>
+                        <button class="table-btn occupied" onclick="openJuiceMenu(18)">Table 18</button>
+                        <button class="table-btn" onclick="openJuiceMenu(19)">Table 19</button>
+                        <button class="table-btn" onclick="openJuiceMenu(20)">Table 20</button>
+                    </div>
+                </div>
+                
+                <div class="location-section">
+                    <h3>Balcony</h3>
+                    <div class="table-grid">
+                        <button class="table-btn" onclick="openJuiceMenu(21)">Table 21</button>
+                        <button class="table-btn" onclick="openJuiceMenu(22)">Table 22</button>
+                        <button class="table-btn" onclick="openJuiceMenu(23)">Table 23</button>
+                        <button class="table-btn occupied" onclick="openJuiceMenu(24)">Table 24</button>
+                        <button class="table-btn" onclick="openJuiceMenu(25)">Table 25</button>
+                        <button class="table-btn" onclick="openJuiceMenu(26)">Table 26</button>
+                        <button class="table-btn" onclick="openJuiceMenu(27)">Table 27</button>
+                        <button class="table-btn" onclick="openJuiceMenu(28)">Table 28</button>
+                        <button class="table-btn" onclick="openJuiceMenu(29)">Table 29</button>
+                        <button class="table-btn" onclick="openJuiceMenu(30)">Table 30</button>
+                    </div>
+                </div>
+                
+                <div class="location-section">
+                    <h3>Pond</h3>
+                    <div class="table-grid">
+                        <button class="table-btn" onclick="openJuiceMenu(31)">Table 31</button>
+                        <button class="table-btn" onclick="openJuiceMenu(32)">Table 32</button>
+                        <button class="table-btn occupied" onclick="openJuiceMenu(33)">Table 33</button>
+                        <button class="table-btn" onclick="openJuiceMenu(34)">Table 34</button>
+                        <button class="table-btn" onclick="openJuiceMenu(35)">Table 35</button>
+                        <button class="table-btn" onclick="openJuiceMenu(36)">Table 36</button>
+                        <button class="table-btn" onclick="openJuiceMenu(37)">Table 37</button>
+                        <button class="table-btn" onclick="openJuiceMenu(38)">Table 38</button>
+                        <button class="table-btn" onclick="openJuiceMenu(39)">Table 39</button>
+                        <button class="table-btn" onclick="openJuiceMenu(40)">Table 40</button>
+                    </div>
+                </div>
+                
+                <div class="location-section">
+                    <h3>Terrace</h3>
+                    <div class="table-grid">
+                        <button class="table-btn" onclick="openJuiceMenu(41)">Table 41</button>
+                        <button class="table-btn" onclick="openJuiceMenu(42)">Table 42</button>
+                        <button class="table-btn" onclick="openJuiceMenu(43)">Table 43</button>
+                        <button class="table-btn" onclick="openJuiceMenu(44)">Table 44</button>
+                        <button class="table-btn occupied" onclick="openJuiceMenu(45)">Table 45</button>
+                        <button class="table-btn" onclick="openJuiceMenu(46)">Table 46</button>
+                        <button class="table-btn" onclick="openJuiceMenu(47)">Table 47</button>
+                        <button class="table-btn" onclick="openJuiceMenu(48)">Table 48</button>
+                        <button class="table-btn" onclick="openJuiceMenu(49)">Table 49</button>
+                        <button class="table-btn" onclick="openJuiceMenu(50)">Table 50</button>
+                    </div>
+                </div>
+                
+                <div class="location-section">
+                    <h3>Parcel (Pickup)</h3>
+                    <div class="table-grid">
+                        <button class="table-btn" onclick="openJuiceMenu(51)">Parcel 1</button>
+                        <button class="table-btn" onclick="openJuiceMenu(52)">Parcel 2</button>
+                        <button class="table-btn" onclick="openJuiceMenu(53)">Parcel 3</button>
+                        <button class="table-btn" onclick="openJuiceMenu(54)">Parcel 4</button>
+                        <button class="table-btn" onclick="openJuiceMenu(55)">Parcel 5</button>
+                        <button class="table-btn" onclick="openJuiceMenu(56)">Parcel 6</button>
+                        <button class="table-btn" onclick="openJuiceMenu(57)">Parcel 7</button>
+                        <button class="table-btn" onclick="openJuiceMenu(58)">Parcel 8</button>
+                        <button class="table-btn" onclick="openJuiceMenu(59)">Parcel 9</button>
+                        <button class="table-btn" onclick="openJuiceMenu(60)">Parcel 10</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Juice Menu Modal -->
+    <div class="modal hidden" id="juice-menu-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Select Juices - Table <span id="selected-table"></span></h2>
+                <span class="close" onclick="closeJuiceMenu()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="juice-list">
+                    <div class="juice-item">
+                        <span class="juice-name">Orange Juice</span>
+                        <span class="juice-price">₹80</span>
+                        <div class="juice-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="number" class="quantity-input" value="0" min="0">
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </div>
+                    <div class="juice-item">
+                        <span class="juice-name">Apple Juice</span>
+                        <span class="juice-price">₹90</span>
+                        <div class="juice-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="number" class="quantity-input" value="0" min="0">
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </div>
+                    <div class="juice-item">
+                        <span class="juice-name">Watermelon Juice</span>
+                        <span class="juice-price">₹70</span>
+                        <div class="juice-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="number" class="quantity-input" value="0" min="0">
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </div>
+                    <div class="juice-item">
+                        <span class="juice-name">Pineapple Juice</span>
+                        <span class="juice-price">₹85</span>
+                        <div class="juice-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="number" class="quantity-input" value="0" min="0">
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </div>
+                    <div class="juice-item">
+                        <span class="juice-name">Mango Juice</span>
+                        <span class="juice-price">₹95</span>
+                        <div class="juice-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="number" class="quantity-input" value="0" min="0">
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </div>
+                    <div class="juice-item">
+                        <span class="juice-name">Strawberry Juice</span>
+                        <span class="juice-price">₹100</span>
+                        <div class="juice-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="number" class="quantity-input" value="0" min="0">
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="order-items" class="order-items">
+                        <!-- Order items will be displayed here -->
+                    </div>
+                    <div class="order-total">
+                        <span>Total:</span>
+                        <span id="order-total-amount">₹0</span>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" onclick="cancelOrder()">Cancel</button>
+                    <button class="btn btn-primary" onclick="placeOrder()">Print & Place Order</button>
+                </div>
+                <!-- Add Order Status Buttons -->
+                <div class="order-status-buttons">
+                    <button class="btn btn-delivered" id="mark-delivered" onclick="markOrderDelivered()">Mark as Delivered</button>
+                    <button class="btn btn-paid" id="mark-paid" onclick="markOrderPaid()">Mark as Paid</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="container hidden" id="admin-container">
+        <header class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <div class="user-info">
+                <span class="username">Admin</span>
+                <button class="btn btn-small" onclick="showLoginPage()">Logout</button>
+            </div>
+        </header>
+        
+        <div class="dashboard-content">
+            <div class="admin-panel">
+                <div class="admin-nav">
+                    <button class="admin-nav-btn active" onclick="showAdminTab('juice-management')">Juice Management</button>
+                    <button class="admin-nav-btn" onclick="showAdminTab('table-management')">Table Management</button>
+                    <button class="admin-nav-btn" onclick="showAdminTab('sales-report')">Sales Report</button>
+                </div>
+                
+                <div class="admin-tab active" id="juice-management">
+                    <h2>Juice Management</h2>
+                    <div class="action-bar">
+                        <button class="btn btn-primary" onclick="showAddJuiceForm()">Add New Juice</button>
+                    </div>
+                    <div class="juice-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Juice Name</th>
+                                    <th>Price (₹)</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Orange Juice</td>
+                                    <td>80</td>
+                                    <td>
+                                        <button class="btn-icon edit" onclick="editJuice(1)">Edit</button>
+                                        <button class="btn-icon delete" onclick="deleteJuice(1)">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Apple Juice</td>
+                                    <td>90</td>
+                                    <td>
+                                        <button class="btn-icon edit" onclick="editJuice(2)">Edit</button>
+                                        <button class="btn-icon delete" onclick="deleteJuice(2)">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Watermelon Juice</td>
+                                    <td>70</td>
+                                    <td>
+                                        <button class="btn-icon edit" onclick="editJuice(3)">Edit</button>
+                                        <button class="btn-icon delete" onclick="deleteJuice(3)">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Pineapple Juice</td>
+                                    <td>85</td>
+                                    <td>
+                                        <button class="btn-icon edit" onclick="editJuice(4)">Edit</button>
+                                        <button class="btn-icon delete" onclick="deleteJuice(4)">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Mango Juice</td>
+                                    <td>95</td>
+                                    <td>
+                                        <button class="btn-icon edit" onclick="editJuice(5)">Edit</button>
+                                        <button class="btn-icon delete" onclick="deleteJuice(5)">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Strawberry Juice</td>
+                                    <td>100</td>
+                                    <td>
+                                        <button class="btn-icon edit" onclick="editJuice(6)">Edit</button>
+                                        <button class="btn-icon delete" onclick="deleteJuice(6)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="admin-tab" id="table-management">
+                    <h2>Table Management</h2>
+                    <div class="table-management">
+                        <div class="location-card">
+                            <h3>Garden</h3>
+                            <p>Total Tables: <span>10</span></p>
+                            <div class="location-actions">
+                                <button class="btn btn-small" onclick="addTable('Garden')">Add Table</button>
+                                <button class="btn btn-small btn-secondary" onclick="removeTable('Garden')">Remove Table</button>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <h3>AC Room</h3>
+                            <p>Total Tables: <span>10</span></p>
+                            <div class="location-actions">
+                                <button class="btn btn-small" onclick="addTable('AC Room')">Add Table</button>
+                                <button class="btn btn-small btn-secondary" onclick="removeTable('AC Room')">Remove Table</button>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <h3>Balcony</h3>
+                            <p>Total Tables: <span>10</span></p>
+                            <div class="location-actions">
+                                <button class="btn btn-small" onclick="addTable('Balcony')">Add Table</button>
+                                <button class="btn btn-small btn-secondary" onclick="removeTable('Balcony')">Remove Table</button>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <h3>Pond</h3>
+                            <p>Total Tables: <span>10</span></p>
+                            <div class="location-actions">
+                                <button class="btn btn-small" onclick="addTable('Pond')">Add Table</button>
+                                <button class="btn btn-small btn-secondary" onclick="removeTable('Pond')">Remove Table</button>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <h3>Terrace</h3>
+                            <p>Total Tables: <span>10</span></p>
+                            <div class="location-actions">
+                                <button class="btn btn-small" onclick="addTable('Terrace')">Add Table</button>
+                                <button class="btn btn-small btn-secondary" onclick="removeTable('Terrace')">Remove Table</button>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <h3>Parcel (Pickup)</h3>
+                            <p>Total Tables: <span>10</span></p>
+                            <div class="location-actions">
+                                <button class="btn btn-small" onclick="addTable('Parcel')">Add Table</button>
+                                <button class="btn btn-small btn-secondary" onclick="removeTable('Parcel')">Remove Table</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-tab" id="sales-report">
+                    <h2>Sales Reports</h2>
+                    <div class="report-filters">
+                        <label for="month-select">Select Month:</label>
+                        <select id="month-select">
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5" selected>May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <button class="btn btn-small" onclick="generateReport()">Generate Report</button>
+                    </div>
+                    
+                    <div class="sales-summary">
+                        <div class="summary-card">
+                            <h3>Total Sales</h3>
+                            <p class="amount">₹48,750</p>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Total Orders</h3>
+                            <p class="count">635</p>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Average Order Value</h3>
+                            <p class="amount">₹76.77</p>
+                        </div>
+                    </div>
+                    
+                    <div class="report-section">
+                        <h3>Top Selling Juices</h3>
+                        <div class="sales-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Juice Name</th>
+                                        <th>Quantity Sold</th>
+                                        <th>Revenue (₹)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mango Juice</td>
+                                        <td>156</td>
+                                        <td>14,820</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Orange Juice</td>
+                                        <td>142</td>
+                                        <td>11,360</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Watermelon Juice</td>
+                                        <td>128</td>
+                                        <td>8,960</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Apple Juice</td>
+                                        <td>94</td>
+                                        <td>8,460</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Pineapple Juice</td>
+                                        <td>72</td>
+                                        <td>6,120</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Juice Form Modal -->
+    <div class="modal hidden" id="juice-form-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="juice-form-title">Add New Juice</h2>
+                <span class="close" onclick="closeJuiceForm()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="juice-form">
+                    <input type="hidden" id="juice-id" value="">
+                    <div class="form-group">
+                        <label for="juice-name">Juice Name</label>
+                        <input type="text" id="juice-name" placeholder="Enter juice name">
+                    </div>
+                    <div class="form-group">
+                        <label for="juice-price">Price (₹)</label>
+                        <input type="number" id="juice-price" placeholder="Enter price">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeJuiceForm()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveJuice()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple JavaScript to handle UI interactions -->
+    <script>
+        // Show/Hide containers
+        function showLoginPage() {
+            document.getElementById('login-container').classList.remove('hidden');
+            document.getElementById('ordertaker-container').classList.add('hidden');
+            document.getElementById('admin-container').classList.add('hidden');
+            document.getElementById('juice-menu-modal').classList.add('hidden');
+            document.getElementById('juice-form-modal').classList.add('hidden');
+        }
+        
+        function showOrderTakerDashboard() {
+            document.getElementById('login-container').classList.add('hidden');
+            document.getElementById('ordertaker-container').classList.remove('hidden');
+            document.getElementById('admin-container').classList.add('hidden');
+        }
+        
+        function showAdminDashboard() {
+            document.getElementById('login-container').classList.add('hidden');
+            document.getElementById('ordertaker-container').classList.add('hidden');
+            document.getElementById('admin-container').classList.remove('hidden');
+        }
+        
+        // Juice Menu Modal
+        function openJuiceMenu(tableId) {
+            document.getElementById('selected-table').textContent = tableId;
+            document.getElementById('juice-menu-modal').classList.remove('hidden');
+        }
+        
+        function closeJuiceMenu() {
+            document.getElementById('juice-menu-modal').classList.add('hidden');
+        }
+        
+        // Quantity Controls
+        function increaseQuantity(button) {
+            const input = button.previousElementSibling;
+            input.value = parseInt(input.value) + 1;
+            updateOrderSummary();
+        }
+        
+        function decreaseQuantity(button) {
+            const input = button.nextElementSibling;
+            if (parseInt(input.value) > 0) {
+                input.value = parseInt(input.value) - 1;
+                updateOrderSummary();
+            }
+        }
+        
+        // Update Order Summary
+        function updateOrderSummary() {
+            const orderItems = document.getElementById('order-items');
+            orderItems.innerHTML = '';
+            
+            let total = 0;
+            const juiceItems = document.querySelectorAll('.juice-item');
+            
+            juiceItems.forEach(item => {
+                const name = item.querySelector('.juice-name').textContent;
+                const priceText = item.querySelector('.juice-price').textContent;
+                const price = parseInt(priceText.replace('₹', ''));
+                const quantity = parseInt(item.querySelector('.quantity-input').value);
+                
+                if (quantity > 0) {
+                    const itemTotal = price * quantity;
+                    total += itemTotal;
+                    
+                    const orderItem = document.createElement('div');
+                    orderItem.className = 'order-item';
+                    orderItem.innerHTML = `
+                        <span>${name} x ${quantity}</span>
+                        <span>₹${itemTotal}</span>
+                    `;
+                    orderItems.appendChild(orderItem);
+                }
+            });
+            
+            document.getElementById('order-total-amount').textContent = `₹${total}`;
+        }
+        
+        // Order Actions
+        function placeOrder() {
+            alert('Order placed and sent to printer!');
+            
+            // Mark the table as occupied (in a real app, this would come from the server)
+            const tableId = document.getElementById('selected-table').textContent;
+            const tableBtn = document.querySelector(`button[onclick="openJuiceMenu(${tableId})"]`);
+            tableBtn.classList.add('occupied');
+            
+            // Show the order status buttons after placing order
+            document.getElementById('mark-delivered').classList.add('active');
+            document.getElementById('mark-paid').classList.add('disabled');
+        }
+        
+        function cancelOrder() {
+            if (confirm('Are you sure you want to cancel this order?')) {
+                closeJuiceMenu();
+            }
+        }
+        
+        // New functions for delivered and paid status
+        function markOrderDelivered() {
+            const tableId = document.getElementById('selected-table').textContent;
+            alert(`Order for Table ${tableId} marked as delivered!`);
+            document.getElementById('mark-delivered').classList.add('completed');
+            document.getElementById('mark-paid').classList.remove('disabled');
+        }
+        
+        function markOrderPaid() {
+            const tableId = document.getElementById('selected-table').textContent;
+            if (confirm(`Confirm payment received for Table ${tableId}?`)) {
+                alert(`Payment received for Table ${tableId}!`);
+                document.getElementById('mark-paid').classList.add('completed');
+                
+                // In a real app, you might want to free up the table after payment
+                // This is just for demonstration
+                setTimeout(() => {
+                    const tableBtn = document.querySelector(`button[onclick="openJuiceMenu(${tableId})"]`);
+                    tableBtn.classList.remove('occupied');
+                    closeJuiceMenu();
+                }, 2000);
+            }
+        }
+        
+        // Function to open juice menu and reset the status buttons
+        function openJuiceMenu(tableId) {
+            document.getElementById('selected-table').textContent = tableId;
+            document.getElementById('juice-menu-modal').classList.remove('hidden');
+            
+            // Reset status buttons when opening menu
+            document.getElementById('mark-delivered').classList.remove('active', 'completed');
+            document.getElementById('mark-paid').classList.remove('active', 'completed');
+            document.getElementById('mark-paid').classList.add('disabled');
+            
+            // If table is already occupied, show the delivered/paid buttons
+            const tableBtn = document.querySelector(`button[onclick="openJuiceMenu(${tableId})"]`);
+            if (tableBtn.classList.contains('occupied')) {
+                document.getElementById('mark-delivered').classList.add('active');
+            }
+        }
+        
+        // Admin Tab Navigation
+        function showAdminTab(tabId) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.admin-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            
+            // Update nav buttons
+            const navButtons = document.querySelectorAll('.admin-nav-btn');
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+        
+        // Juice Management
+        function showAddJuiceForm() {
+            document.getElementById('juice-form-title').textContent = 'Add New Juice';
+            document.getElementById('juice-id').value = '';
+            document.getElementById('juice-name').value = '';
+            document.getElementById('juice-price').value = '';
+            document.getElementById('juice-form-modal').classList.remove('hidden');
+        }
+        
+        function editJuice(id) {
+            document.getElementById('juice-form-title').textContent = 'Edit Juice';
+            document.getElementById('juice-id').value = id;
+            
+            // In a real app, you would fetch the juice details from the server
+            // This is a simplified demo
+            const juiceName = document.querySelector(`.juice-table tbody tr:nth-child(${id}) td:nth-child(2)`).textContent;
+            const juicePrice = document.querySelector(`.juice-table tbody tr:nth-child(${id}) td:nth-child(3)`).textContent;
+            
+            document.getElementById('juice-name').value = juiceName;
+            document.getElementById('juice-price').value = juicePrice;
+            document.getElementById('juice-form-modal').classList.remove('hidden');
+        }
+        
+        function deleteJuice(id) {
+            if (confirm('Are you sure you want to delete this juice?')) {
+                // In a real app, you would send a delete request to the server
+                alert(`Juice ${id} deleted successfully!`);
+            }
+        }
+        
+        function closeJuiceForm() {
+            document.getElementById('juice-form-modal').classList.add('hidden');
+        }
+        
+        function saveJuice() {
+            const id = document.getElementById('juice-id').value;
+            const name = document.getElementById('juice-name').value;
+            const price = document.getElementById('juice-price').value;
+            
+            if (!name || !price) {
+                alert('Please fill all fields!');
+                return;
+            }
+            
+            // In a real app, you would send this data to the server
+            alert(`Juice ${id ? 'updated' : 'added'} successfully!`);
+            closeJuiceForm();
+        }
+        
+        // Table Management
+        function addTable(location) {
+            alert(`New table added to ${location}!`);
+        }
+        
+        function removeTable(location) {
+            alert(`Removed a table from ${location}!`);
+        }
+        
+        // Sales Report
+        function generateReport() {
+            const month = document.getElementById('month-select').value;
+            alert(`Generated report for month ${month}!`);
+            // In a real app, you would fetch the report data from the server
+        }
+    </script>
+</body>
+</html>
